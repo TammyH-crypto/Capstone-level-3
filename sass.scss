@@ -1,0 +1,104 @@
+$primaryFont: "halloween";
+$secondaryFont: fantasy;
+
+@mixin boxshadow {
+  box-shadow: 2px 2px rgb(209, 31, 31);
+}
+@mixin textShadow {
+    text-shadow: 3px 3px yellow;
+}
+@mixin animation1 {
+     transform: scale(1) rotate(0deg);
+    transition: transform 1s;
+}
+@mixin animation2 {
+    transform: scale(2) rotate(15deg);
+    transition: transform 2s;
+}
+@mixin animation {
+    transform: scale(1) rotate(0deg);
+   transition: transform 1s;
+
+   &:hover {
+    transform: scale(0.5) rotate(-10deg);
+    transition: transform 2s;
+}
+   }
+#email {
+  width: 50%;
+ 
+}
+#number {
+  width: 60%;
+}
+#comments {
+  width: 60%;   
+}
+$darkgreen: rgba(8, 65, 8);
+
+h1 {
+  color: $darkgreen;
+}
+$blue: rgba(13, 13, 230);
+p b {
+  color: $blue;
+}
+ul {
+  padding: 1;
+  li {
+      color: red;
+      }
+}
+
+$myColor: rgba(207, 15, 207);
+
+pre {
+    color: $myColor;
+}
+$moviePoster: url("Ns.jpg");
+.bg-image {
+    background-image: $moviePoster;
+}
+.height {
+  height: 200%;
+}
+.width {
+  width: 200%;
+}
+
+@font-face {
+  font-family: "Halloween-fonts";
+  src: url(halloween.jpg);
+  }
+  
+  .opacity {
+    opacity: 0.90;
+}
+.box-shadow {
+  box-shadow: 2px 2px grey;
+  text-shadow: 3px 3px yellow;
+}
+.text-shadow {
+  text-shadow: 3px 3px yellow;
+}
+
+#mixin-button {
+  transform: scale(1) rotate(0deg);
+  transition: transform 1s;
+  @include animation()
+}
+#mixin-button:hover {
+  transform: scale(2) rotate(15deg);
+  transition: transform 2s;
+}
+
+#animated-button {
+  transform: scale(1) rotate(0deg);
+  transition: transform 1s;
+  @include animation()
+}
+#animated-button:hover {
+  transform: scale(0.5) rotate(-10deg);
+  transition: transform 2s;
+  @include animation1()
+}
